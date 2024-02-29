@@ -1,0 +1,303 @@
+body {
+    background: black;
+    animation-name: brownbackground;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+  }
+  
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  
+  #bird {
+    display: flex;
+    position: relative;
+    flex-flow: row nowrap;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: flex-start;
+    animation:
+    flying-bird 25s alternate infinite ease;
+  }
+  
+  #birdsbody {
+    display: flex;
+    position: relative;
+    width: 200px;
+    height: 250px;
+    background: red;
+    border-radius: 50%;
+    animation-name: feathers;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    transition-timing-function: ease-out;
+  }
+  
+  #left-eye {
+    display: flex;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: black;
+    border-radius: 50%;
+    top: 60px;
+    left: 100px;
+  }
+  
+  #lefteyepupil {
+    display: flex;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    top: 6px;
+  }
+  
+  #right-eye {
+    display: flex;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: black;
+    border-radius: 50%;
+    top: 60px;
+    left: 130px;
+  }
+  
+  #righteyepupil {
+    display: flex;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    top: 6px;
+  }
+  
+  #beak {
+    display: flex;
+    position: absolute;
+    width: 35px;
+    height: 20px;
+    background: yellow;
+    border-radius: 50%;
+    top: 100px;
+    left: 120px;
+  }
+  
+  #wingright {
+    display: flex;
+    width: 100px;
+    height: 20px;
+    background: yellow;
+    border-radius: 50%;
+    animation-name: flywingright;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    transform-origin: center left;
+  }
+  
+  #blur_right {
+    display: flex;
+    width: 100px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    filter: blur (200px);
+    animation-name: blur_right_anim;
+    animation-duration: 2s;
+    transition-timing-function: cubic-bezier (1.1, 0.75, 0.25, 0.1);
+    animation-iteration-count: infinite;
+    transform-origin: center left;
+  }
+  
+  #blur_right_duplicate {
+    display: flex;
+    width: 100px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    filter: blur(2px);
+    animation-name: blur_right_anim;
+    animation-delay: 200ms;
+    animation-duration: 2s;
+    transition-timing-function: cubic-bezier (1.1, 0.75, 0.25, 0.1);
+    animation-iteration-count: infinite;
+    transform-origin: center left;
+  }
+  
+  #wingleft {
+    display: flex;
+    width: 100px;
+    height: 20px;
+    background: yellow;
+    border-radius: 50%;
+    animation-name: flywingleft;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    transform-origin: right center;
+  }
+  
+  #blurleft {
+    display: flex;
+    width: 100px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    animation-name: blur_left_anim;
+    animation-duration: 2s;
+    transition-timing-function: cubic-bezier (1.1, 0.75, 0.25, 0.1);
+    animation-iteration-count: infinite;
+    transform-origin: center right;
+  }
+  
+  #blurleft_duplicate {
+    display: flex;
+    width: 100px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    filter: blur(2px);
+    animation-name: blur_left_anim;
+    animation-delay: 200ms;
+    animation-duration: 2s;
+    transition-timing-function: cubic-bezier (1.1, 0.75, 0.25, 0.1);
+    animation-iteration-count: infinite;
+    transform-origin: center right;
+  }
+  
+  @keyframes flying-bird {
+    0% {
+      top: 0px; left: 0vw;
+    }
+    25% {
+      top: 50px; left; 25vw;
+    }
+    50% {
+      top: 0px; left: 50vw;
+    }
+    75% {
+     top: 50px; left: 75vw; 
+    }
+    100% {
+      top: 0px; left: 10vw;
+    }
+    75% {
+      top: 50px; left: 50vw;
+    }
+    50% {
+      top: 0px; left: 25vw;
+    }
+    25% {
+      top: 50px; left: 0vw;
+    }
+    0% {
+      top: 0px; left: 0vw;
+    }
+  }
+  
+  @keyframes feathers {
+    0% {
+      background: aquamarine;
+    }
+    50% {
+      background: cornflowerblue;
+    }
+    100% {
+      background: red;
+    }
+  }
+  
+  @keyframes brownbackground {
+    0% {
+      background: black;
+    }
+    50% {
+      background: brown;
+    }
+    100% {
+      background: black;
+    }
+  }
+  
+  @keyframes flywingleft {
+    0% {
+      transform: rotateZ(-45deg);
+    }
+    50% {
+      transform: rotateZ(45deg);
+    }
+    100% {
+      transform: rotateZ(-45deg);
+    }
+  }
+  
+  @keyframes flywingright {
+    0% {
+      transform: rotateZ(45deg);
+    }
+    50% {
+      transform: rotateZ(-45deg);
+    }
+    100% {
+      transform: rotateZ(45deg);
+    }
+  }
+  
+  @keyframes blur_right_anim {
+    0% {
+      transform: rotateZ(0deg);
+      opacity: 0;
+    }
+    25% {
+      transform: rotateZ(7deg);
+      opacity: 0.75;
+    }
+    50% {
+      transform: rotateZ(14deg);
+      opacity: 0.1;
+    }
+    62.5% {
+      transform: rotateZ(-14deg);
+      opacity: 0.25;
+    }
+    75% {
+      transform: rotateZ(-7deg);
+      opacity: 0.25;
+    }
+    100% {
+      transform: rotateZ(0deg);
+      opacity: 0.1;
+    }
+  }
+  
+  @keyframes blur_left_anim {
+    0% {
+      transform: rotateZ(0deg);
+      opacity: 0;
+    }
+    25% {
+      transform: rotateZ(-7deg);
+      opacity: 0.75;
+    }
+    50% {
+      transform: rotateZ(-14deg);
+      opacity: 0.1;
+    }
+    62.5% {
+      transform: rotateZ(14deg);
+      opacity: 0.25;
+    }
+    75% {
+      transform: rotateZ(7deg);
+      opacity: 0.25;
+    }
+    100% {
+      transform: rotateZ(0deg);
+      opacity: 0.1;
+    }
+  }
+  
